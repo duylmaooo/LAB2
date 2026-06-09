@@ -5,20 +5,20 @@ import { useState } from "react";
 import sp5 from "./assets/sp5.jpg";
 import sp2 from "./assets/sp2.jpg";
 import sp4 from "./assets/sp4.jpg";
-import spx1 from "./assets/spx1.jpg";
-import spx2 from "./assets/spx2.jpg";
-import spx3 from "./assets/spx3.jpg";
-import spx4 from "./assets/spx4.jpg";
-import spx5 from "./assets/spx5.jpg";
-import spx6 from "./assets/spx6.jpg";
+import ao1 from "./assets/ao1.jpg";
+import ao2 from "./assets/ao2.jpg";
+import ao3 from "./assets/ao3.jpg";
+import ao4 from "./assets/ao4.jpg";
+import ao5 from "./assets/ao5.jpg";
+import ao6 from "./assets/ao6.jpg";
 
 const products = [
-  { id: 1, img: spx1, name: "tuong ot",    price: "450,000 VND" },
-  { id: 2, img: spx2, name: "binh sieu toc",   price: "650,000 VND" },
-  { id: 3, img: spx3, name: "May xay",   price: "250,000 VND" },
-  { id: 4, img: spx4, name: "May ep",  price: "850,000 VND" },
-  { id: 5, img: spx5, name: "Boi chien",     price: "550,000 VND" },
-  { id: 6, img: spx6, name: "Binh nuoc",   price: "350,000 VND" },
+  { id: 1, img: ao1, name: "ao1",    price: "450,000 VND", status: "ao moi1" },
+  { id: 2, img: ao2, name: "ao2",   price: "650,000 VND", status: "ao moi2" },
+  { id: 3, img: ao3, name: "ao3",   price: "250,000 VND", status: "ao moi3" },
+  { id: 4, img: ao4, name: "ao4",  price: "850,000 VND", status: "ao moi4" },
+  { id: 5, img: ao5, name: "ao5",     price: "550,000 VND", status: "ao moi5" },
+  { id: 6, img: ao6, name: "ao6",   price: "350,000 VND",status: "ao moi6" },
 ];
 
 function App() {
@@ -81,19 +81,19 @@ function App() {
       
       <Container className="my-4">
         <h2 className="text-center mb-4">Our Products</h2>
-        <Row xs={1} md={3} className="g-4">
+        <Row xs={1} md={3} className="g-4">             {/*nho nhat la 1 sp */}
           {products.map((p) => (
             <Col key={p.id}>
               <div className="card h-100">
                 <img
                   src={p.img}
                   alt={p.name}
-                  className="card-img-top"
-                  style={{ height: "250px", objectFit: "cover" }}
+                  style={{ height: "400px", objectFit: "cover" }}
                 />
                 <div className="card-body d-flex flex-column">
                   <h5 className="card-title">{p.name}</h5>
                   <p className="card-text">{p.price}</p>
+                  <p className="status">{p.status}</p>
                   <button
                     type="button"
                     className={`btn mt-auto ${added[p.id] ? "btn-secondary" : "btn-success"}`}
